@@ -6,7 +6,7 @@ import * as url from "url";
 
 function App() {
     const [videos, setVideos] = useState([])
-    const [input, setInput] = useState("")
+    const [input, setInput] = useState("sex")
     useEffect(() => {
         const requestOptions = {
             method: 'GET',
@@ -22,7 +22,6 @@ function App() {
 
         console.log("complete")
     }, [input])
-
     const handleAdd = input => {
         setInput(input)
     }
