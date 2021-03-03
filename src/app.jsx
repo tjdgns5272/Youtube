@@ -2,11 +2,10 @@ import React, {useEffect, useState} from 'react';
 import VideoList from "./components/video_list";
 import Header from "./components/header";
 import styles from './app.module.css';
-import * as url from "url";
 
 function App() {
     const [videos, setVideos] = useState([])
-    const [input, setInput] = useState("sex")
+    const [input, setInput] = useState("")
     useEffect(() => {
         const requestOptions = {
             method: 'GET',
@@ -26,7 +25,7 @@ function App() {
         setInput(input)
     }
     return (
-        <div>
+        <div className={styles.app}>
             <Header onAdd={handleAdd}/>
             <VideoList videos={videos}/>
         </div>
