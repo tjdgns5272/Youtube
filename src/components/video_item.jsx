@@ -17,5 +17,4 @@ function VideoItem({video: {snippet}}) {
         </li>
     )
 }
-
 export default VideoItem;

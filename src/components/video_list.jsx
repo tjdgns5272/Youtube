@@ -7,7 +7,7 @@ function VideoList(props) {
         <ul className={styles.videos}>
             {props.videos.map(video =>
                <VideoItem
-                    key={video.id}
+                    key={video.id.videoId}
                     video={video}
                 />
             )}
