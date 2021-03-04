@@ -12,7 +12,7 @@ function Header(props) {
         inputRef.current.value = ''
     }
     return (
-        <header>
+        <header className={styles.header}>
             <div className={styles.headerLogo}>
                 <button className={styles.logo}>
                     <i className="fab fa-youtube"/>

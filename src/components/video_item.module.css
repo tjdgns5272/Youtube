@@ -11,21 +11,26 @@
     cursor: pointer;
     border: 1px solid lightgray;
     transition: transform 250ms ease-in;
-    box-shadow: 5px 5px 4px 1px rgba(163,156,168,0.92);
+    box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.95);
 }
+
 .video:hover {
     transform: scale(1.03);
 }
+
 .thumbnail {
     width: 40%;
     height: 50%;
 }
+
 .metadata {
     margin-left: 0.5rem;
 }
+
 .title, .channel {
     font-size: 0.8rem;
 }
+
 .channel {
     font-size: 0.6rem
 }
