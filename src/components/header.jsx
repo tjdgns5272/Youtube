@@ -1,16 +1,17 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styles from './header.module.css'
 
-function Header(props) {
+function Header({onSearch}) {
 
-    const inputRef = React.createRef();
+    const inputRef = useRef();
 
     const onSubmit = (event) => {
         event.preventDefault();
         const value = inputRef.current.value;
-        value && props.onAdd(value)
+        value && onSearch(value)
         inputRef.current.value = ''
     }
+
     return (
         <header className={styles.header}>
             <div className={styles.headerLogo}>

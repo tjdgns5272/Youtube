@@ -3,31 +3,23 @@ import VideoList from "./components/video_list";
 import Header from "./components/header";
 import styles from './app.module.css';
 
-function App() {
+function App({youtube}) {
     const [videos, setVideos] = useState([])
-    const [input, setInput] = useState("")
-    useEffect(() => {
-        const requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-        console.log("fetching...")
-        // const defaultUrl
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=AIzaSyAvsKgkC1UZlZMVtg-sU7lMzB3YxplC93M&chart=mostPopular&q=${input}`
-            , requestOptions)
-            .then(response => response.json())
-            .then(result => setVideos(result.items))
-            .catch(error => console.log('error', error));
 
-        console.log("complete")
-    }, [input])
-
-    const handleAdd = input => {
-        setInput(input)
+    const handleSearch = query => {
+        youtube
+            .search(query)
+            .then(items => setVideos(items))
     }
+    useEffect(() => {
+        youtube
+            .mostPopular()
+            .then(items => setVideos(items))
+    }, []);
+
     return (
         <div className={styles.app}>
-            <Header onAdd={handleAdd}/>
+            <Header onSearch={handleSearch}/>
             <VideoList videos={videos}/>
         </div>
     );
