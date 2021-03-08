@@ -9,7 +9,8 @@ const VideoDetails = ({video, video:{snippet}}) => (
             width="100%"
             height="500px"
             src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
-            frameBorder="0">
+            frameBorder="0"
+            allowFullScreen>
         </iframe>
         <h3 className={styles.title}>{snippet.title}</h3>
         <h5>Channel : {snippet.channelTitle}</h5>
