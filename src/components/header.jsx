@@ -11,11 +11,14 @@ function Header({onSearch}) {
         value && onSearch(value)
         inputRef.current.value = ''
     }
-
+    const onClick = () => {
+        const value = inputRef.current.value;
+        onSearch(value)
+    }
     return (
         <header className={styles.header}>
             <div className={styles.headerLogo}>
-                <button className={styles.logo}>
+                <button className={styles.logo} onClick={onClick}>
                     <i className="fab fa-youtube"/>
                 </button>
                 <span className={styles.youtube}>Youtube</span>
